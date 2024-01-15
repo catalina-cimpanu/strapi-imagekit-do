@@ -3,13 +3,13 @@ module.exports = ({ env }) => ({
     config: {
       provider: "strapi-provider-upload-imagekit", // Community providers need to have the full package name
       providerOptions: {
-        publicKey: "publicKey",
-        privateKey: "privateKey",
-        urlEndpoint: "urlEndPoint", // Example: https://ik.imagekit.io/username
+        publicKey: env("IMAGEKIT_PUBLIC_KEY"),
+        privateKey: env("IMAGEKIT_PRIVATE_KEY"),
+        urlEndpoint: env("IMAGEKIT_URL_ENDPOINT"), // Example: https://ik.imagekit.io/username
 
         // Optional
         params: {
-          folder: "/production/images", // Defaults to "/" if value is not supplied
+          folder: "/test-strapi-imagekit-do", // Defaults to "/" if value is not supplied
         },
       },
     },
